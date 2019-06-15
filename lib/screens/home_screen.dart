@@ -12,8 +12,8 @@ class HomeScreen extends StatelessWidget {
         title: Text("logo"),
       ),
       body: PageView(
-        physics: NeverScrollableScrollPhysics(),
         controller: bloc.pageController,
+        onPageChanged: bloc.changeIndex,
         children: <Widget>[
           Container(color: Colors.green,),
           Container(color: Colors.red,),
@@ -22,6 +22,7 @@ class HomeScreen extends StatelessWidget {
       ),
       bottomNavigationBar: StreamBuilder<int>(
         stream: bloc.index,
+        initialData: 0,
         builder: (context, snapshot) {
           return BottomNavigationBar(
             items: <BottomNavigationBarItem>[
