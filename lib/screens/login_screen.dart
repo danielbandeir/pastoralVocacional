@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pastoravocacional/customColors/customColorLogin.dart';
+import 'package:pastoravocacional/CustomStyles/customStyles.dart';
 import 'screens_components.dart';
 class LoginScreen extends StatelessWidget with ScreensComponents{
   @override
@@ -7,7 +7,7 @@ class LoginScreen extends StatelessWidget with ScreensComponents{
     final formKey = GlobalKey<FormState>();
 
     return Scaffold(
-      backgroundColor: customColorLogin.mainColor,
+      backgroundColor: customStyles.mainColor,
       body: Center(
         child: ListView(
           shrinkWrap: true  ,
@@ -22,9 +22,9 @@ class LoginScreen extends StatelessWidget with ScreensComponents{
                   padding: EdgeInsets.only(bottom: 70),
                   child: CircleAvatar(
                     radius: 70,
-                    backgroundColor: customColorLogin.white,
+                    backgroundColor: customStyles.white,
                     child: Text("Logo",
-                      style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: customColorLogin.mainColor) ,),
+                      style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: customStyles.mainColor) ,),
                   ),
                 ),
                 Container(
