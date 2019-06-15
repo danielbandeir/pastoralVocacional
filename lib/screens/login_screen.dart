@@ -1,22 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:pastoravocacional/customColors/customColorLogin.dart';
-class LoginScreen extends StatelessWidget{
+import 'package:pastoravocacional/CustomStyles/customStyles.dart';
+import 'screens_components.dart';
+class LoginScreen extends StatelessWidget with ScreensComponents{
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+
     return Scaffold(
-      backgroundColor: customColorLogin.mainColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          CircleAvatar(
-            radius: 70,
-            backgroundColor: customColorLogin.white,
-            child: Text("Logo",
-              style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: customColorLogin.mainColor) ,),
-          )
-        ],
-      ),
-    );
+      backgroundColor: customStyles.mainColor,
+      body: Center(
+        child: ListView(
+          shrinkWrap: true  ,
+          children: <Widget>[
+            Form(
+              key: formKey,
+              child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                //LOGO DO APP
+                Container(
+                  padding: EdgeInsets.only(bottom: 70),
+                  child: CircleAvatar(
+                    radius: 70,
+                    backgroundColor: customStyles.white,
+                    child: Text("Logo",
+                      style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold, color: customStyles.mainColor) ,),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(bottom: 25),
+                  //TEXTFIELD DE LOGIN
+                  child: campo("Login"),
+                ),
+                Container(
+                  //TEXTFIELD DE SENHA
+                  child: campo("Senha"),
+                  padding: EdgeInsets.only(bottom: 50),
+                ),
+                //BOTÃO DE LOGIN
+                botao()
+              ],
+            ),)
+          ],
+        ),
+      )
+      );
   }
 }
