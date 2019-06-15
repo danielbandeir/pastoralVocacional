@@ -1,10 +1,12 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
+import 'package:flutter/widgets.dart';
 import 'package:pastoravocacional/blocs/login_validators.dart';
 import 'package:pastoravocacional/repositories/auth_respository.dart';
 import 'package:rxdart/rxdart.dart';
 
 class LoginBloc extends BlocBase with LoginValidators {
   final AuthRepository authRepository;
+  BuildContext context;
 
   BehaviorSubject<String> _email = BehaviorSubject();
   BehaviorSubject<String> _password = BehaviorSubject();
@@ -23,6 +25,7 @@ class LoginBloc extends BlocBase with LoginValidators {
   void submit(Function(String) callBackError) async {
     try {
       await authRepository.signIn(_email.value, _password.value);
+      Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
     } catch (e) {
       callBackError("Erro ao realizar login");
     }
