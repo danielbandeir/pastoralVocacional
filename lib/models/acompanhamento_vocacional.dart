@@ -10,7 +10,7 @@ import 'package:pastoravocacional/models/vida_religiosa.dart';
 class AcompanhamentoVocacional {
   List<EncontroVocacional> encontrosVocacionais;
   List<SemanaConvivencia> semanasConvivencia;
-  List<FomulacaoVocacional> formulacoesVocacional;
+  List<FormulacaoVocacional> formulacoesVocacional;
   Discernimento discernimento;
   String historicoFamiliar;
   String historicoPessoal;

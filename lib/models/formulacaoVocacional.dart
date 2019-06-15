@@ -2,13 +2,13 @@ import 'dart:collection';
 
 import 'package:pastoravocacional/models/evento.dart';
 
-class FomulacaoVocacional {
+class FormulacaoVocacional {
   Evento evento;
   String interacaoEntrevista;
   String impressaoGeral;
   String observacaoEntrevistador;
 
-  FomulacaoVocacional.fromJSON(LinkedHashMap<String, dynamic> map){
+  FormulacaoVocacional.fromJSON(LinkedHashMap<String, dynamic> map){
     this.evento = Evento.fromJSON(map['evento']);
     this.interacaoEntrevista = map['interacaoEntrevista'];
     this.impressaoGeral = map['impressaoGeral'];
