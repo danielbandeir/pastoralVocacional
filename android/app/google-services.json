@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "183023023852",
+    "firebase_url": "https://app-pastoral-vocacional.firebaseio.com",
+    "project_id": "app-pastoral-vocacional",
+    "storage_bucket": "app-pastoral-vocacional.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183023023852:android:9712c96f84ced048",
+        "android_client_info": {
+          "package_name": "om.example.pastoravocacional"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183023023852-01t978oh3jnmeh8srmqkf4fe6pv602n1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "om.example.pastoravocacional",
+            "certificate_hash": "a76846cf760bd352bf6ef4f022ed00655b2683ce"
+          }
+        },
+        {
+          "client_id": "183023023852-8nnksk6tvs823o8jpj6mp5le196sdqqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZG_8Ry5g4NAIzSQ4xPMSX4w_Sa5ti384"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183023023852-8nnksk6tvs823o8jpj6mp5le196sdqqo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
