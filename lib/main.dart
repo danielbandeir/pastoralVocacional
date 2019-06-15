@@ -12,14 +12,12 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: LoginScreen(),
-=======
     return BlocProvider(
       blocs: [
         Bloc((i) => LoginBloc(i.get<AuthRepository>()))
@@ -34,7 +32,6 @@ class MyApp extends StatelessWidget {
         ),
         home: LoginScreen(),
       ),
->>>>>>> e16ed9862d145caf611b9cb20e15b963186dc64b
     );
   }
 }
