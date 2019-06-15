@@ -13,6 +13,14 @@ class EventRepositoryImpl implements EventRepository{
   }
 
   @override
+  Future<void> readEvent(Evento event) async{
+    await Firestore.instance
+                .collection('eventos')
+                .document(event.local)
+                .get();
+  }
+
+  @override
   Future<void> updateEvent(Evento event) async{
     await Firestore.instance
                 .collection('eventos')

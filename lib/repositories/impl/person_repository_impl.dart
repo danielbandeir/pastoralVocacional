@@ -12,6 +12,14 @@ class PersonRepositoryImpl implements PersonRepository{
   }
 
   @override
+  Future<void> readPerson(Integrante person){
+    Firestore.instance
+              .collection('Integrantes')
+              .document(person.nome)
+              .get();
+  }
+
+  @override
   Future<void> updatePerson(Integrante person){
     Firestore.instance
               .collection('Integrantes')

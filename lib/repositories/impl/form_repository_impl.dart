@@ -12,6 +12,14 @@ class FormRepositoryImpl implements FormRepository{
   }
 
   @override
+  Future<void> readForm(FormVocacional formVocacional){
+    Firestore.instance
+                .collection('formularios')
+                .document(formVocacional.integrante.nome)
+                .get();
+  }
+
+  @override
   Future<void> updateForm(FormVocacional formVocacional){
     Firestore.instance
                 .collection('formularios')
