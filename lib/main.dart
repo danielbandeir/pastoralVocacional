@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pastoravocacional/blocs/login_bloc.dart';
 import 'package:pastoravocacional/repositories/auth_respository.dart';
 import 'package:pastoravocacional/repositories/impl/auth_repository_impl.dart';
+import 'screens/login_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Container(),
+        home: LoginScreen(),
       ),
     );
   }

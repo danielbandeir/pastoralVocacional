@@ -25,6 +25,15 @@ class LoginBloc extends BlocBase {
     }
   }
 
+  void signOut(Function callBack) async{
+    try{
+      await authRepository.signOut();
+      callBack();
+    }catch(e){
+      print(e);
+    }
+  }
+
   @override
   void dispose() {
     _email.close();
