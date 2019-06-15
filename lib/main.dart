@@ -1,6 +1,8 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:pastoravocacional/blocs/login_bloc.dart';
+import 'package:pastoravocacional/repositories/auth_respository.dart';
+import 'package:pastoravocacional/repositories/impl/auth_repository_impl.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +11,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       blocs: [
-        Bloc((i) => LoginBloc())
+        Bloc((i) => LoginBloc(i.get<AuthRepository>()))
+      ],
+      dependencies: [
+        Dependency((i) => AuthRepositoryImpl()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
