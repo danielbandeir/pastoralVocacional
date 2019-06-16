@@ -4,18 +4,31 @@ import 'package:pastoravocacional/blocs/home_bloc.dart';
 import 'package:pastoravocacional/CustomStyles/customStyles.dart';
 import 'package:pastoravocacional/screens/dashboard_screen.dart';
 import 'package:pastoravocacional/screens/integrante_screen.dart';
-class HomeScreen extends StatelessWidget {
- 
+
+
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
     HomeBloc bloc = BlocProvider.getBloc<HomeBloc>();
+
+
     return Scaffold(
+      drawer: Drawer(),
       appBar: AppBar(
+        key: _scaffoldKey,
         elevation: 0,
         backgroundColor: customStyles.mainColor,
         centerTitle: true,
-        title: Text("DashBoard", style: TextStyle(fontSize: 20, color: customStyles.white),),
-        leading: IconButton(icon: Icon(Icons.subject, color: customStyles.white,), onPressed: null),
+        title: Text("Início", style: TextStyle(fontSize: 20, color: customStyles.white),),
+        leading: IconButton(icon: Icon(Icons.subject, color: customStyles.white,), onPressed: (){
+          _scaffoldKey.currentState.openDrawer();
+        }),
       ),
       body: PageView(
         controller: bloc.pageController,
