@@ -5,22 +5,18 @@ class getAllRepositoryImpl implements getAllRepository{
 
   @override
   Future<void> getAllPersons() async{
-    await Firestore.instance
+    (await Firestore.instance
                 .collection('Integrantes')
                 .getDocuments()
-                .then((value){
-                  value.documents.length;
-                });
+                ).documents.length;
   }
 
   @override
   Future<void> getAllEvents() async{
-    await Firestore.instance
+    (await Firestore.instance
                 .collection('eventos')
                 .getDocuments()
-                .then((value){
-                  value.documents.length;
-                });
+                ).documents.length;
   }
   
 }
