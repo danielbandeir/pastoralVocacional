@@ -27,6 +27,10 @@ dependencies:
   firebase_auth: ^0.11.1+6
   cloud_firestore: ^0.12.5+1
   rxdart: ^0.22.0
+  intl: ^0.15.8
+
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -60,9 +64,9 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-     - family: FuturaBold
-       fonts:
+  fonts:
+    - family: FuturaBold
+      fonts:
          - asset: fonts/futuraBold.otf
   #   - family: Trajan Pro
   #     fonts:

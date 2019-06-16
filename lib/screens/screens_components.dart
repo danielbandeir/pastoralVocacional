@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pastoravocacional/CustomStyles/customStyles.dart';
+import 'package:intl/intl.dart';
 
 
 
@@ -37,5 +38,40 @@ mixin ScreensComponents{
       onTap: (){},
     );
   }
+
+  Widget data(BuildContext context){
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 48),
+      height: 49,
+      color: customStyles.white,
+      child: InkWell(
+          onTap: ()=> _selectDate(context),
+          child: AbsorbPointer(
+            child: TextField(
+              decoration: InputDecoration(
+                  hintText: DateFormat.yMMMMd("pt_BR").format(DateTime.now()).toString(),
+                  hintStyle: TextStyle(height: -1,fontSize: 17, color: customStyles.mainColor, fontWeight: FontWeight.w400),
+                  border: OutlineInputBorder()
+              ),
+            ),
+          )
+      )
+
+    );
+
+  }
+
+
+  Future _selectDate(BuildContext context) async {
+    DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2016),
+        lastDate:  DateTime(2029),
+        locale: Locale("pt"),
+    );
+  }
+
+
 
 }
