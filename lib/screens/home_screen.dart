@@ -25,12 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         backgroundColor: customStyles.mainColor,
         centerTitle: true,
-<<<<<<< HEAD
-        title: Text("Início", style: TextStyle(fontSize: 20, color: customStyles.white),),
-        leading: IconButton(icon: Icon(Icons.subject, color: customStyles.white,), onPressed: (){
-          _scaffoldKey.currentState.openDrawer();
-        }),
-=======
         title: StreamBuilder<int>(
           stream: bloc.index,
           initialData: 0,
@@ -39,7 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
           }
         ),
         leading: IconButton(icon: Icon(Icons.subject, color: customStyles.white,), onPressed: null),
->>>>>>> refs/remotes/origin/master
       ),
       body: PageView(
         controller: bloc.pageController,
