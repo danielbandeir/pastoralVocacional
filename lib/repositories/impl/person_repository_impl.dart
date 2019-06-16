@@ -4,32 +4,32 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PersonRepositoryImpl implements PersonRepository{
   @override
-  Future<void> createPerson(Integrante person){
-    Firestore.instance
+  Future<void> createPerson(Integrante person) async{
+    await Firestore.instance
               .collection('Integrantes')
               .document(person.nome)
               .setData({'Integrante' : person});
   }
 
   @override
-  Future<void> readPerson(Integrante person){
-    Firestore.instance
+  Future<void> readPerson(Integrante person) async{
+    await Firestore.instance
               .collection('Integrantes')
               .document(person.nome)
               .get();
   }
 
   @override
-  Future<void> updatePerson(Integrante person){
-    Firestore.instance
+  Future<void> updatePerson(Integrante person) async{
+    await Firestore.instance
               .collection('Integrantes')
               .document(person.nome)
               .updateData({'Integrante' : person});
   }
 
   @override
-  Future<void> deletePerson(Integrante person){
-    Firestore.instance
+  Future<void> deletePerson(Integrante person) async{
+    await Firestore.instance
               .collection('Integrantes')
               .document(person.nome)
               .delete();
