@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pastoravocacional/blocs/home_bloc.dart';
 import 'package:pastoravocacional/CustomStyles/customStyles.dart';
 import 'package:pastoravocacional/screens/dashboard_screen.dart';
+import 'package:pastoravocacional/screens/eventos_screen.dart';
 import 'package:pastoravocacional/screens/integrante_screen.dart';
 
 
@@ -39,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onPageChanged: bloc.changeIndex,
         children: <Widget>[
           DashBoardScreen(),
-          Container(color: Colors.red,),
+          EventosScreen(),
           IntegranteScreen(),
         ],
       ),

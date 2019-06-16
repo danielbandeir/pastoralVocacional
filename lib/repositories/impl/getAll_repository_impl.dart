@@ -1,7 +1,7 @@
 import 'package:pastoravocacional/repositories/getAll_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class getAllRepositoryImpl implements getAllRepository{
+class GetAllRepositoryImpl implements GetAllRepository{
 
   @override
   Future<void> getAllPersons() async{
