@@ -7,16 +7,6 @@ class IntegranteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //This is a drawer for Integrantes screen
-      drawer: Drawer(
-        elevation: 0.0,
-      ),
-      //Apbar to Integrantes
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Integrantes', style: TextStyle(fontFamily: 'FuturaBold')),
-        elevation: 0.0,
-      ),
       //dontHavePerson if don't have persons yet in database
       body: dontHavePerson(context),
       floatingActionButton: FloatingActionButton(
