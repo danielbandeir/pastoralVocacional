@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pastoravocacional/blocs/home_bloc.dart';
 import 'package:pastoravocacional/CustomStyles/customStyles.dart';
 import 'package:pastoravocacional/screens/dashboard_screen.dart';
+import 'package:pastoravocacional/screens/integrante_screen.dart';
 class HomeScreen extends StatelessWidget {
  
   @override
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         children: <Widget>[
           DashBoardScreen(),
           Container(color: Colors.red,),
-          Container(color: Colors.blue,),
+          IntegranteScreen(),
         ],
       ),
       bottomNavigationBar: StreamBuilder<int>(

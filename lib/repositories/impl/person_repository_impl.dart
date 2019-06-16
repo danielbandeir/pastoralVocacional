@@ -3,6 +3,7 @@ import 'package:pastoravocacional/repositories/person_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PersonRepositoryImpl implements PersonRepository{
+  //Call method create person from database
   @override
   Future<void> createPerson(Integrante person) async{
     await Firestore.instance
@@ -11,6 +12,7 @@ class PersonRepositoryImpl implements PersonRepository{
               .setData({'Integrante' : person});
   }
 
+  //Call method read from person database
   @override
   Future<void> readPerson(Integrante person) async{
     await Firestore.instance
@@ -19,6 +21,7 @@ class PersonRepositoryImpl implements PersonRepository{
               .get();
   }
 
+  //Call method that update person
   @override
   Future<void> updatePerson(Integrante person) async{
     await Firestore.instance
@@ -27,6 +30,7 @@ class PersonRepositoryImpl implements PersonRepository{
               .updateData({'Integrante' : person});
   }
 
+  //Call method that delete person
   @override
   Future<void> deletePerson(Integrante person) async{
     await Firestore.instance

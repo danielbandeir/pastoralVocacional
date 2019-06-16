@@ -15,10 +15,10 @@ class AddIntegranteScreen extends StatelessWidget with ScreensComponents{
           children: <Widget>[
             Container(
               padding: EdgeInsets.symmetric(vertical:15),
-              child: Text("Adicionar Evento", style: TextStyle(fontSize: 35, color: customStyles.white),),
+              child: Text("Adicionar Evento", style: TextStyle(fontSize: 30 , color: customStyles.white),),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 40),
+              padding: EdgeInsets.symmetric(horizontal: 49),
               child: Text("Preencha abaixo as informações individuais",
                 style: TextStyle(fontSize: 16, color: customStyles.white, ),
                 textAlign: TextAlign.center,
@@ -37,8 +37,15 @@ class AddIntegranteScreen extends StatelessWidget with ScreensComponents{
               margin: EdgeInsets.only(top: 45),
               child: campo("Nome", null, null, false),
             ),
-            data(context)
-
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 15),
+              child: data(context),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 55),
+              child: menu(),
+            ),
+            botao("Continuar", null, null)
           ],
         ),
       )

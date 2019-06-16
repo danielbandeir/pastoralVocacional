@@ -5,7 +5,6 @@ import 'package:pastoravocacional/blocs/login_bloc.dart';
 import 'package:pastoravocacional/repositories/auth_respository.dart';
 import 'package:pastoravocacional/repositories/impl/auth_repository_impl.dart';
 import 'package:pastoravocacional/routes.dart';
-import 'package:pastoravocacional/screens/add_integrante_screen.dart';
 import 'package:pastoravocacional/screens/home_screen.dart';
 import 'package:pastoravocacional/screens/login_screen.dart';
 import 'screens/dashboard_screen.dart';

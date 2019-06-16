@@ -14,7 +14,7 @@ class HomeBloc extends BlocBase {
   void changeIndex(int index) {
     _index.sink.add(index);
     pageController.animateToPage(index,
-        curve: Curves.bounceIn, duration: Duration(milliseconds: 100));
+        curve: Curves.linear, duration: Duration(milliseconds: 300));
   }
 
   @override
