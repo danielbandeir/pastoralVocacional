@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pastoravocacional/CustomStyles/customStyles.dart';
+import 'package:pastoravocacional/screens/ev_eventos_screen.dart';
+import 'package:pastoravocacional/screens/sv_eventos_screen.dart';
 
 class EventosScreen extends StatefulWidget {
   @override
@@ -36,16 +38,8 @@ class _EventosScreenState extends State<EventosScreen> {
         ),
         body: TabBarView(
           children: <Widget>[
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              color: Colors.black,
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              color: Colors.red,
-            )
+            SVEventosScreen(),
+            EVEventosScreen()
           ],
         ),
       ),
