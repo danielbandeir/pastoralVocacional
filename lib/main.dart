@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           accentColor: customStyles.mainColor
         ),
         routes: routes(),
-        home: LoginScreen(),
+        home: HomeScreen(),
       ),
     );
   }

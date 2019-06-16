@@ -14,7 +14,13 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: customStyles.mainColor,
         centerTitle: true,
-        title: Text("DashBoard", style: TextStyle(fontSize: 20, color: customStyles.white),),
+        title: StreamBuilder<int>(
+          stream: bloc.index,
+          initialData: 0,
+          builder: (context, snapshot) {
+            return Text(bloc.titles[snapshot.data], style: TextStyle(fontSize: 20, color: customStyles.white),);
+          }
+        ),
         leading: IconButton(icon: Icon(Icons.subject, color: customStyles.white,), onPressed: null),
       ),
       body: PageView(
