@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget with ScreensComponents{
                   padding: EdgeInsets.only(bottom: 50),
                 ),
                 //BOTÃO DE LOGIN
-                botao()
+                botao("Login")
               ],
             ),)
           ],

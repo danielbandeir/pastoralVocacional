@@ -26,14 +26,14 @@ mixin ScreensComponents{
   }
 
   //BOTÃO DO LOGIN
-  Widget botao(){
+  Widget botao(String nome){
     return InkWell(
       child: Container(
         alignment: Alignment.center,
         height: 49,
         margin: EdgeInsets.symmetric(horizontal: 49),
         color: customStyles.white,
-        child: Text("Login", style: TextStyle(fontSize: 17, color: customStyles.mainColor, fontWeight: FontWeight.w600),)
+        child: Text(nome, style: TextStyle(fontSize: 17, color: customStyles.mainColor, fontWeight: FontWeight.w600),)
       ),
       onTap: (){},
     );
@@ -69,6 +69,36 @@ mixin ScreensComponents{
         firstDate: DateTime(2016),
         lastDate:  DateTime(2029),
         locale: Locale("pt"),
+    );
+  }
+
+  Widget menu(){
+    String dropdownValue;
+    return Center(
+      child: Container(
+          padding: EdgeInsets.only(top: 11),
+          margin: EdgeInsets.symmetric(horizontal: 49),
+          height: 49,
+          color: customStyles.white,
+          child: DropdownButton<String>(
+            isExpanded: true,
+            isDense: true,
+            hint: Text("   Tipo de Evento", style: TextStyle(fontSize: 17, color: customStyles.mainColor, )),
+            value: dropdownValue,
+            onChanged: (String v){
+              dropdownValue = v;
+            },
+            style: TextStyle(fontSize: 17, color: customStyles.mainColor, ),
+            items: <String>["   Semana de Convivência", "   Encontro Vocacional"]
+                .map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value, textAlign: TextAlign.center ,style: TextStyle(fontSize: 17, color: customStyles.mainColor)),
+              );
+            }).toList(),
+          )
+
+      ),
     );
   }
 
