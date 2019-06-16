@@ -35,7 +35,7 @@ class AddIntegranteScreen extends StatelessWidget with ScreensComponents{
             ),
             Container(
               margin: EdgeInsets.only(top: 45),
-              child: campo("Nome"),
+              child: campo("Nome", null, null, false),
             ),
             Container(
               margin: EdgeInsets.symmetric(vertical: 15),
@@ -45,12 +45,8 @@ class AddIntegranteScreen extends StatelessWidget with ScreensComponents{
               margin: EdgeInsets.only(bottom: 55),
               child: menu(),
             ),
-            botao("Continuar")
-
-
+            botao("Continuar", null, null)
           ],
-
-
         ),
       )
     );

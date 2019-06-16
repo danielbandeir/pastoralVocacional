@@ -8,12 +8,14 @@ import 'package:intl/intl.dart';
 mixin ScreensComponents{
 
   //TEXTFIELDS DO LOGIN
-  Widget campo(String nome, { var validator, Function function} ){
+  Widget campo(String nome, Function(String) validator, TextEditingController controller, bool obscuredText ){
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 48),
-      height: 49,
       color: customStyles.white,
       child: TextFormField(
+        controller: controller,
+        validator: validator,
+        obscureText: obscuredText,
         style: TextStyle(color: customStyles.mainColor, fontWeight: FontWeight.w400),
         decoration: InputDecoration(
             hintText: nome,
@@ -26,16 +28,16 @@ mixin ScreensComponents{
   }
 
   //BOTÃO DO LOGIN
-  Widget botao(String nome){
+  Widget botao(String title, Function(Function(String)) submit, Function(String) callBack){
     return InkWell(
       child: Container(
         alignment: Alignment.center,
         height: 49,
         margin: EdgeInsets.symmetric(horizontal: 49),
         color: customStyles.white,
-        child: Text(nome, style: TextStyle(fontSize: 17, color: customStyles.mainColor, fontWeight: FontWeight.w600),)
+        child: Text(title, style: TextStyle(fontSize: 17, color: customStyles.mainColor, fontWeight: FontWeight.w600),)
       ),
-      onTap: (){},
+      onTap: () => submit(callBack),
     );
   }
 

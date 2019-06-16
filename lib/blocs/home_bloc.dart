@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
 class HomeBloc extends BlocBase {
+
+  List<String> titles = ['Dashboard', 'Eventos', 'Pessoas'];
+
   PageController pageController = PageController(
     initialPage: 0
   );
@@ -13,8 +16,7 @@ class HomeBloc extends BlocBase {
 
   void changeIndex(int index) {
     _index.sink.add(index);
-    pageController.animateToPage(index,
-        curve: Curves.linear, duration: Duration(milliseconds: 300));
+    pageController.jumpToPage(index);
   }
 
   @override
