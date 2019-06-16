@@ -39,7 +39,6 @@ class AddIntegranteScreen extends StatelessWidget with ScreensComponents{
             ),
             data(context)
 
-
           ],
 
 

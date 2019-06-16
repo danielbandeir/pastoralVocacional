@@ -9,6 +9,7 @@ import 'package:pastoravocacional/screens/add_integrante_screen.dart';
 import 'package:pastoravocacional/screens/home_screen.dart';
 import 'screens/dashboard_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pastoravocacional/CustomStyles/customStyles.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,7 +33,9 @@ class MyApp extends StatelessWidget {
         supportedLocales: [Locale("pt")],
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primaryColor: customStyles.mainColor,
+          splashColor: customStyles.mainColor,
+          accentColor: customStyles.mainColor
         ),
         routes: routes(),
         home: AddIntegranteScreen(),
