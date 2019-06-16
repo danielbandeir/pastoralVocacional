@@ -2,32 +2,29 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pastoravocacional/blocs/login_validators.dart';
 import 'package:pastoravocacional/repositories/auth_respository.dart';
-import 'package:rxdart/rxdart.dart';
+import 'package:flutter/material.dart';
 
 class LoginBloc extends BlocBase with LoginValidators {
   final AuthRepository authRepository;
   BuildContext context;
 
-  BehaviorSubject<String> _email = BehaviorSubject();
-  BehaviorSubject<String> _password = BehaviorSubject();
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  GlobalKey<FormState> formKey = GlobalKey();
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   LoginBloc(this.authRepository);
 
-  Observable<String> get email => _email.stream.transform(validateEmail);
-  Observable<String> get password =>
-      _password.stream.transform(validatePassword);
-  Observable<bool> get submitValid =>
-      Observable.combineLatest2(email, password, (email, password) => true);
-
-  Function(String) get changeEmail => _email.sink.add;
-  Function(String) get changePassword => _password.sink.add;
+  
 
   void submit(Function(String) callBackError) async {
     try {
-      await authRepository.signIn(_email.value, _password.value);
+      if(!formKey.currentState.validate()) throw("Erro");
+      await authRepository.signIn(emailController.text, passwordController.text);
       Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
     } catch (e) {
-      callBackError("Erro ao realizar login");
+      callBackError(e.toString());
     }
   }
 
@@ -42,8 +39,6 @@ class LoginBloc extends BlocBase with LoginValidators {
 
   @override
   void dispose() {
-    _email.close();
-    _password.close();
     super.dispose();
   }
 }

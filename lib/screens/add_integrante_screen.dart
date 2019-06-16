@@ -49,15 +49,15 @@ class AddIntegranteScreen extends StatelessWidget with ScreensComponents {
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 45, bottom: 15),
-                        child: campo("Nome"),
+                        child: campo("Nome", null, null, null),
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 15),
-                        child: campo("Nome do Pai"),
+                        child: campo("Nome do Pai", null, null, null),
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 15),
-                        child: campo("Nome da Mãe"),
+                        child: campo("Nome da Mãe", null, null, null),
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 15),
@@ -65,14 +65,14 @@ class AddIntegranteScreen extends StatelessWidget with ScreensComponents {
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 15),
-                        child: campo("Cidade"),
+                        child: campo("Cidade", null, null, null),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 15, bottom: 55),
-                        child: campo("Estado"),
+                        child: campo("Estado", null, null, null),
                       ),
                       Container(
-                        child: botao("Adicionar"),
+                        child: botao("Adicionar", null, null),
                         margin: EdgeInsets.only(bottom: 80),
                       )
                     ],
