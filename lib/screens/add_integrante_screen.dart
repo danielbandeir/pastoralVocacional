@@ -1,58 +1,84 @@
 import 'package:flutter/material.dart';
-import 'screens_components.dart';
 import 'package:pastoravocacional/CustomStyles/customStyles.dart';
+import 'screens_components.dart';
 
-
-
-class AddIntegranteScreen extends StatelessWidget with ScreensComponents{
+class AddIntegranteScreen extends StatelessWidget with ScreensComponents {
   @override
   Widget build(BuildContext context) {
+    final formkey = GlobalKey<FormState>();
+
     return Scaffold(
-      body: Container(
-        color: customStyles.mainColor,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.symmetric(vertical:15),
-              child: Text("Adicionar Evento", style: TextStyle(fontSize: 30 , color: customStyles.white),),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 49),
-              child: Text("Preencha abaixo as informações individuais",
-                style: TextStyle(fontSize: 16, color: customStyles.white, ),
-                textAlign: TextAlign.center,
-
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 7),
-              child: Text("para adicionar o novo integrante",
-                style: TextStyle(fontSize: 16, color: customStyles.white, ),
-                textAlign: TextAlign.center,
-
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 45),
-              child: campo("Nome"),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 15),
-              child: data(context),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: 55),
-              child: menu(),
-            ),
-            botao("Continuar")
-
-
-          ],
-
-
-        ),
-      )
-    );
+        backgroundColor: customStyles.mainColor,
+        body: Center(
+          child: ListView(
+            children: <Widget>[
+              Form(
+                  key: formkey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        child: Text(
+                          "Adicionar Integrante",
+                          style: TextStyle(
+                              fontSize: 30, color: customStyles.white),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 49),
+                        child: Text(
+                          "Preencha abaixo as informações individuais",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: customStyles.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 7),
+                        child: Text(
+                          "para adicionar o novo integrante",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: customStyles.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 45, bottom: 15),
+                        child: campo("Nome"),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 15),
+                        child: campo("Nome do Pai"),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 15),
+                        child: campo("Nome da Mãe"),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 15),
+                        child: data(context, hint: "Data de Nascimento"),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 15),
+                        child: campo("Cidade"),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 15, bottom: 55),
+                        child: campo("Estado"),
+                      ),
+                      Container(
+                        child: botao("Adicionar"),
+                        margin: EdgeInsets.only(bottom: 80),
+                      )
+                    ],
+                  ))
+            ],
+          ),
+        ));
   }
 }

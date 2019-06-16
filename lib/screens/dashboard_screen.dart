@@ -53,10 +53,10 @@ class DashBoardScreen extends StatelessWidget {
               heightFactor: 1,
               child: CircleAvatar(
                 backgroundColor: customStyles.mainColor,
-                radius: MediaQuery.of(context).size.width < 600 ? 90 : 120,
+                radius: MediaQuery.of(context).size.height < 600 ? 90 : 112,
                 child: CircleAvatar(
                   backgroundColor: customStyles.white,
-                  radius: MediaQuery.of(context).size.width < 600 ? 80 : 100,
+                  radius: MediaQuery.of(context).size.height < 600 ? 80 : 100,
                   child: Text("Logo", style: TextStyle(color: customStyles.mainColor, fontSize: 50),),
                 ),
               ),
@@ -69,7 +69,7 @@ class DashBoardScreen extends StatelessWidget {
   Widget demonstrador(IconData icon, BuildContext context){
     return Column(
       children: <Widget>[
-        Icon( icon, size: MediaQuery.of(context).size.width < 600 ? 70 : 90, color: customStyles.mainColor,),
+        Icon( icon, size: MediaQuery.of(context).size.height < 600 ? 70 : 90, color: customStyles.mainColor,),
         Text("00", style: TextStyle(fontSize: MediaQuery.of(context).size.width < 600 ? 45 : 65, fontWeight: FontWeight.w500, color: customStyles.mainColor),)
       ],
     );

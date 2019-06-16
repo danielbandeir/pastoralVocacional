@@ -8,6 +8,7 @@ import 'package:pastoravocacional/routes.dart';
 import 'package:pastoravocacional/screens/home_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pastoravocacional/CustomStyles/customStyles.dart';
+import 'screens/add_integrante_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
           accentColor: customStyles.mainColor
         ),
         routes: routes(),
-        home: HomeScreen(),
+        home: AddIntegranteScreen(),
       ),
     );
   }
