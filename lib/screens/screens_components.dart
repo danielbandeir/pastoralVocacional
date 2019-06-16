@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:pastoravocacional/CustomStyles/customStyles.dart';
 import 'package:intl/intl.dart';
 
-
-
-
-mixin ScreensComponents{
-
+mixin ScreensComponents {
   //TEXTFIELDS DO LOGIN
-  Widget campo(String nome, Function(String) validator, TextEditingController controller, bool obscuredText ){
+  Widget campo(String nome, Function(String) validator, TextEditingController controller, bool obscuredText) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 48),
       color: customStyles.white,
@@ -19,12 +15,14 @@ mixin ScreensComponents{
         style: TextStyle(color: customStyles.mainColor, fontWeight: FontWeight.w400),
         decoration: InputDecoration(
             hintText: nome,
-            hintStyle: TextStyle(height: -1,fontSize: 17, color: customStyles.mainColor, fontWeight: FontWeight.w400),
-            border: OutlineInputBorder()
-        ),
+            hintStyle: TextStyle(
+                height: -1,
+                fontSize: 17,
+                color: customStyles.mainColor,
+                fontWeight: FontWeight.w400),
+            border: OutlineInputBorder()),
       ),
     );
-
   }
 
   //BOTÃO DO LOGIN
@@ -41,40 +39,41 @@ mixin ScreensComponents{
     );
   }
 
-  Widget data(BuildContext context){
+  //TEXTFIELD DE DATA
+  Widget data(BuildContext context, {String hint = null }) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 48),
-      height: 49,
-      color: customStyles.white,
-      child: InkWell(
-          onTap: ()=> _selectDate(context),
-          child: AbsorbPointer(
-            child: TextField(
-              decoration: InputDecoration(
-                  hintText: DateFormat.yMMMMd("pt_BR").format(DateTime.now()).toString(),
-                  hintStyle: TextStyle(height: -1,fontSize: 17, color: customStyles.mainColor, fontWeight: FontWeight.w400),
-                  border: OutlineInputBorder()
-              ),
-            ),
-          )
-      )
-
-    );
-
+        margin: EdgeInsets.symmetric(horizontal: 48),
+        height: 49,
+        color: customStyles.white,
+        alignment: Alignment.centerLeft,
+        child: InkWell(
+            onTap: () => _selectDate(context),
+              child: Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Text(
+                    hint == null ? DateFormat.yMMMMd("pt_BR").format(DateTime.now()).toString() : hint,
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: customStyles.mainColor,
+                      fontWeight: FontWeight.w400,
+                    )),
+              )
+            ));
   }
 
-
+  //DATEPICKER
   Future _selectDate(BuildContext context) async {
     DateTime picked = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(2016),
-        lastDate:  DateTime(2029),
-        locale: Locale("pt"),
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2016),
+      lastDate: DateTime(2029),
+      locale: Locale("pt"),
     );
   }
 
-  Widget menu(){
+  //DROPDOWNMENU
+  Widget menu() {
     String dropdownValue;
     return Center(
       child: Container(
@@ -85,25 +84,37 @@ mixin ScreensComponents{
           child: DropdownButton<String>(
             isExpanded: true,
             isDense: true,
-            hint: Text("   Tipo de Evento", style: TextStyle(fontSize: 17, color: customStyles.mainColor, )),
+            hint: Padding(
+                padding: null,
+                child: Text("Tipo de Evento",
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: customStyles.mainColor,
+                    )),
+            ),
             value: dropdownValue,
-            onChanged: (String v){
+            onChanged: (String v) {
               dropdownValue = v;
             },
-            style: TextStyle(fontSize: 17, color: customStyles.mainColor, ),
-            items: <String>["   Semana de Convivência", "   Encontro Vocacional"]
-                .map<DropdownMenuItem<String>>((String value) {
+            style: TextStyle(
+              fontSize: 17,
+              color: customStyles.mainColor,
+            ),
+            items: <String>[
+              "Semana de Convivência",
+              "Encontro Vocacional"
+            ].map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
-                child: Text(value, textAlign: TextAlign.center ,style: TextStyle(fontSize: 17, color: customStyles.mainColor)),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                child: Text(value,
+                    textAlign: TextAlign.center,
+                    style:
+                    TextStyle(fontSize: 17, color: customStyles.mainColor)),),
               );
             }).toList(),
-          )
-
-      ),
+          )),
     );
   }
-
-
-
 }
