@@ -35,13 +35,11 @@ class AddIntegranteScreen extends StatelessWidget with ScreensComponents{
             ),
             Container(
               margin: EdgeInsets.only(top: 45),
-              child: campo("Nome"),
+              child: campo("Nome", null, null, false),
             ),
             data(context)
 
           ],
-
-
         ),
       )
     );
