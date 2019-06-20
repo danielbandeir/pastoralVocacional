@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pastoravocacional/CustomStyles/customStyles.dart';
 
 class EVEventosScreen extends StatefulWidget {
   @override
@@ -8,8 +9,16 @@ class EVEventosScreen extends StatefulWidget {
 class _EVEventosScreenState extends State<EVEventosScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: null,
+        backgroundColor: customStyles.mainColor,
+        elevation: 0.0,
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
