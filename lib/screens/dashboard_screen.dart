@@ -85,13 +85,8 @@ class DashBoardScreen extends StatelessWidget {
   Widget demonstrador(int length, IconData icon, BuildContext context){
     return Column(
       children: <Widget>[
-<<<<<<< HEAD
         Icon( icon, size: MediaQuery.of(context).size.height < 600 ? 70 : 90, color: customStyles.mainColor,),
         Text("00", style: TextStyle(fontSize: MediaQuery.of(context).size.width < 600 ? 45 : 65, fontWeight: FontWeight.w500, color: customStyles.mainColor),)
-=======
-        Icon( icon, size: MediaQuery.of(context).size.width < 600 ? 70 : 90, color: customStyles.mainColor,),
-        Text(length.toString(), style: TextStyle(fontSize: MediaQuery.of(context).size.width < 600 ? 45 : 65, fontWeight: FontWeight.w500, color: customStyles.mainColor),)
->>>>>>> 50f7d4e5fe438ba3f5cc3e2ea09ef4ddaa44f7a7
       ],
     );
   }

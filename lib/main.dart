@@ -43,11 +43,7 @@ class MyApp extends StatelessWidget {
           accentColor: customStyles.mainColor
         ),
         routes: routes(),
-<<<<<<< HEAD
         home: AddIntegranteScreen(),
-=======
-        home: LoginScreen(),
->>>>>>> 50f7d4e5fe438ba3f5cc3e2ea09ef4ddaa44f7a7
       ),
     );
   }

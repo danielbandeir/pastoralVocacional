@@ -49,7 +49,7 @@ class AddEventoScreen extends StatelessWidget with ScreensComponents {
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 45),
-                      child: campo("Nome"),
+                      child: campo("Nome", null, null, null),
                     ),
                     Container(
                       margin: EdgeInsets.symmetric(vertical: 15),
@@ -59,7 +59,7 @@ class AddEventoScreen extends StatelessWidget with ScreensComponents {
                       margin: EdgeInsets.only(bottom: 55),
                       child: menu(),
                     ),
-                    botao("Adicionar")
+                    botao("Adicionar", null, null)
                   ],
                 ))
           ],
