@@ -5,7 +5,6 @@ import 'package:pastoravocacional/blocs/login_bloc.dart';
 import 'screens_components.dart';
 
 class LoginScreen extends StatelessWidget with ScreensComponents {
-
   LoginBloc bloc;
 
   @override
@@ -14,6 +13,7 @@ class LoginScreen extends StatelessWidget with ScreensComponents {
     bloc.context = context;
 
     return Scaffold(
+        key: bloc.scaffoldKey,
         backgroundColor: customStyles.mainColor,
         body: Center(
           child: ListView(
@@ -42,15 +42,17 @@ class LoginScreen extends StatelessWidget with ScreensComponents {
                     Container(
                       padding: EdgeInsets.only(bottom: 25),
                       //TEXTFIELD DE LOGIN
-                      child: campo("Login", bloc.validateEmail, bloc.emailController, false),
+                      child: campo("Login", bloc.validateEmail,
+                          bloc.emailController, false),
                     ),
                     Container(
                       //TEXTFIELD DE SENHA
-                      child: campo("Senha", bloc.validatePassword, bloc.passwordController, true),
+                      child: campo("Senha", bloc.validatePassword,
+                          bloc.passwordController, true),
                       padding: EdgeInsets.only(bottom: 50),
                     ),
                     //BOTÃO DE LOGIN
-                    botao("Login", null, null)
+                    botao("Login", bloc.submit, bloc.showSnackBar)
                   ],
                 ),
               )

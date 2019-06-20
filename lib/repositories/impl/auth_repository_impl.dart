@@ -13,5 +13,10 @@ class AuthRepositoryImpl implements AuthRepository{
   Future<void> signOut() async{
     await _auth.signOut();
   }
+
+  @override
+  Future<bool> isLoggedIn() async{
+    return (await _auth.currentUser()) != null;
+  }
   
 }

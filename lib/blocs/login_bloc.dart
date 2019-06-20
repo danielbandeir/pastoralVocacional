@@ -14,14 +14,17 @@ class LoginBloc extends BlocBase with LoginValidators {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  LoginBloc(this.authRepository);
-
-  
+  LoginBloc(this.authRepository){
+    isLoggedIn().then((logged){
+      if(logged) goToHomeScreen();
+    });
+  }
 
   void submit(Function(String) callBackError) async {
     try {
-      if(!formKey.currentState.validate()) throw("Erro");
-      await authRepository.signIn(emailController.text, passwordController.text);
+      if (!formKey.currentState.validate()) throw ("Erro");
+      await authRepository.signIn(
+          emailController.text, passwordController.text);
       Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
     } catch (e) {
       callBackError(e.toString());
@@ -35,6 +38,24 @@ class LoginBloc extends BlocBase with LoginValidators {
     } catch (e) {
       print(e);
     }
+  }
+
+  Future<bool> isLoggedIn() async {
+    if ((await authRepository.isLoggedIn()))
+      return true;
+    else 
+      return false;
+  }
+
+  void goToHomeScreen(){
+    Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
+  }
+
+  void showSnackBar(String erro){
+    scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text(erro),
+      backgroundColor: Colors.red,
+    ));
   }
 
   @override
